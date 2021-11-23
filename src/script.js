@@ -27,5 +27,26 @@ const isDead = (health) => {
 }
 
 function fight (player1,player2,player1Health,player2health){
+    while(true){
+        let attacker = chooseOption(player1,player2);
+        if (attacker === player1){
+            player2health === attackPlayer(player2health);
+            logHealth(player2, player2health);
+        }
+        else if(isDead(player2health)){
+            logDeath(player1,player2);
+            break;
+        }
+        else{
+            player1Health = attackPlayer(player1Health);
+            logHealth(player1,player1Health);
+            if (isDead === player1Health){
+                logDeath(player2,player1);
+                break;
+            }
+    
+        }
+
+    }
     
 }
